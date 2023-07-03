@@ -1,5 +1,5 @@
 name = "api"
-main = "src/worker.js"
+main = "src/index.js"
 compatibility_date = "2023-07-03"
 
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
