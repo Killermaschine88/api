@@ -20,4 +20,4 @@ class JSONResponse {
     }
 }
 
-export { JSONResponse }
+export { JSONResponse };

@@ -13,23 +13,23 @@ import { dungeonRouterHandler } from "./routes/dungeons";
 
 export default {
     async fetch(request, env, ctx) {
-		const url = new URL(request.url);
-		const route = url.pathname;
-		const queryParams = url.searchParams;
-		const username = queryParams.get("name");
+        const url = new URL(request.url);
+        const route = url.pathname;
+        const queryParams = url.searchParams;
+        const username = queryParams.get("name");
 
-		switch(route) {
-			case "/":
-				return homeRouterHandler();
-			
-			case "/dungeons":
-				return dungeonRouterHandler(username, request, ctx);
-			
-			case "/kuudra":
-				return new Response("Kuudra API");
+        switch (route) {
+            case "/":
+                return homeRouterHandler();
 
-			default:
-				return homeRouterHandler();
-		}
-	},
+            case "/dungeons":
+                return dungeonRouterHandler(username, request, ctx);
+
+            case "/kuudra":
+                return new Response("Kuudra API");
+
+            default:
+                return homeRouterHandler();
+        }
+    },
 };
