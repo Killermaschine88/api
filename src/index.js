@@ -12,7 +12,7 @@ import { homeRouterHandler } from "./routes/home";
 import { dungeonRouterHandler } from "./routes/dungeons";
 
 export default {
-    async fetch(request) {
+    async fetch(request, env, ctx) {
 		const url = new URL(request.url);
 		const route = url.pathname;
 		const queryParams = url.searchParams;
@@ -23,7 +23,7 @@ export default {
 				return homeRouterHandler();
 			
 			case "/dungeons":
-				return dungeonRouterHandler(username);
+				return dungeonRouterHandler(username, request, ctx);
 			
 			case "/kuudra":
 				return new Response("Kuudra API");
